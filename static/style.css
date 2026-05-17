@@ -165,6 +165,9 @@ a:hover { color: var(--dark); }
 }
 .form-field input::placeholder { color: #b5b0a3; }
 
+/* Fix: [hidden] muss das display der span-Elemente überschreiben */
+[hidden] { display: none !important; }
+
 .cta-button {
   display: inline-flex;
   align-items: center;

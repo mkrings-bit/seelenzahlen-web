@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seelenzahlen Deep-Dive — kostenlose numerologische Analyse</title>
+<meta name="description" content="Erhalte deinen persönlichen Seelenzahlen Deep-Dive als 14-seitiges PDF — basierend auf deinem Geburtsdatum und dem Soul-Codes-System nach Maxim Mankevich.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <span class="brand-mark">✦</span>
+      <span class="brand-name">Seelenzahlen</span>
+    </div>
+    <nav class="header-nav">
+      <a href="#wie-es-funktioniert">Wie es funktioniert</a>
+      <a href="#was-du-bekommst">Was du bekommst</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Numerologische Tiefenanalyse · 14 Seiten · kostenlos</div>
+        <h1 class="hero-title">
+          Was dein <span class="gold">Geburtsdatum</span><br>
+          wirklich über dich verrät.
+        </h1>
+        <p class="hero-sub">
+          Dein persönlicher Seelenzahlen Deep-Dive — ein 14-seitiges PDF, das dir Lebenszahl,
+          Seelenzahl, Persönlichkeitszahl, Karma-Aspekte und dein persönliches Jahr 2026 erklärt.
+          Basierend auf dem Soul-Codes-System nach Maxim Mankevich.
+        </p>
+
+        <form id="seelenzahlen-form" class="hero-form" autocomplete="off" novalidate>
+          <div class="form-row">
+            <label class="form-field">
+              <span class="form-label">Vorname (optional)</span>
+              <input type="text" name="name" placeholder="z.B. Anna" maxlength="80" autocomplete="given-name">
+            </label>
+            <label class="form-field">
+              <span class="form-label">Geburtsdatum</span>
+              <input type="text" name="date" placeholder="TT.MM.JJJJ" inputmode="numeric"
+                     required pattern="\d{1,2}[\.\-/]\d{1,2}[\.\-/]\d{4}"
+                     title="Geburtsdatum im Format TT.MM.JJJJ" autocomplete="bday">
+            </label>
+          </div>
+
+          <button type="submit" class="cta-button" id="submit-btn">
+            <span class="cta-text">Meinen Deep-Dive erstellen</span>
+            <span class="cta-loading" hidden>
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              berechne deine Zahlen…
+            </span>
+          </button>
+
+          <p class="form-hint">
+            Direkter Download. Keine E-Mail nötig, kein Newsletter.
+          </p>
+
+          <div id="error-box" class="error-box" hidden></div>
+        </form>
+      </div>
+
+      <aside class="hero-preview" aria-hidden="true">
+        <div class="preview-card">
+          <div class="preview-eyebrow">Seelenzahlen Deep-Dive</div>
+          <div class="preview-big-number">8</div>
+          <div class="preview-label">LEBENSZAHL</div>
+          <div class="preview-tag">Manifestation · Macht · Verantwortung</div>
+          <div class="preview-meta">14 Seiten · Numerologie nach Mankevich</div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+
+  <section id="wie-es-funktioniert" class="section section-light">
+    <div class="container">
+      <h2 class="section-title">In drei Schritten zu deinem Deep-Dive</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Geburtsdatum eingeben</h3>
+          <p>Tag, Monat, Jahr — das ist alles, was wir brauchen.
+          Optional kannst du deinen Vornamen dazu schreiben, der erscheint dann auf dem Cover.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Zahlen werden berechnet</h3>
+          <p>Aus deinem Datum entstehen Lebenszahl, Seelenzahl, Persönlichkeit, Ausdruck,
+          Karma-Aspekte, dein persönliches Jahr und deine Lebenszyklen.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>PDF herunterladen</h3>
+          <p>Du bekommst sofort dein persönliches 14-Seiten-PDF zum Speichern, Lesen,
+          Drucken — direkt auf dein Gerät.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="was-du-bekommst" class="section">
+    <div class="container">
+      <h2 class="section-title">Was im PDF steht</h2>
+      <div class="content-grid">
+        <div class="content-item">
+          <div class="content-bullet">→</div>
+          <div>
+            <h4>Vollständige Berechnung</h4>
+            <p>Tabelle mit allen Zahlen und Erklärung, wie sie aus deinem Datum entstehen.</p>
+          </div>
+        </div>
+        <div class="content-item">
+          <div class="content-bullet">→</div>
+          <div>
+            <h4>Lebenszahl-Tiefenporträt</h4>
+            <p>Mission, Stärken, Schatten, Berufung, Geld, Körper, Beziehungen — und die größte Falle.</p>
+          </div>
+        </div>
+        <div class="content-item">
+          <div class="content-bullet">→</div>
+          <div>
+            <h4>Seelenzahl & Kombination</h4>
+            <p>Dein innerer Antrieb und wie er mit deiner Lebenszahl spricht — inklusive Spannungsfeldern.</p>
+          </div>
+        </div>
+        <div class="content-item">
+          <div class="content-bullet">→</div>
+          <div>
+            <h4>Persönlichkeit & Ausdruck</h4>
+            <p>Wie du nach außen wirkst und wie deine Wirkung in der Welt landet.</p>
+          </div>
+        </div>
+        <div class="content-item">
+          <div class="content-bullet">→</div>
+          <div>
+            <h4>Karma-Aspekte</h4>
+            <p>Versteckte Lernfelder — Karma-Zahlen und Meisterzahlen, die in deinem Code mitschwingen.</p>
+          </div>
+        </div>
+        <div class="content-item">
+          <div class="content-bullet">→</div>
+          <div>
+            <h4>Persönliches Jahr</h4>
+            <p>In welcher Energie du dieses Kalenderjahr stehst und was es dir abverlangt.</p>
+          </div>
+        </div>
+        <div class="content-item">
+          <div class="content-bullet">→</div>
+          <div>
+            <h4>Kompatibilität & Beziehungen</h4>
+            <p>Welche Zahlen mit deiner Lebenszahl resonieren — und welche reiben.</p>
+          </div>
+        </div>
+        <div class="content-item">
+          <div class="content-bullet">→</div>
+          <div>
+            <h4>Reflexionsfragen & Praxis-Tools</h4>
+            <p>Konkrete Übungen für täglich, wöchentlich, monatlich, jährlich.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container cta-section">
+      <h2 class="cta-section-title">Bereit für deinen Deep-Dive?</h2>
+      <p class="cta-section-sub">Es dauert weniger als eine Minute — und du bekommst ein PDF,
+        das dich vermutlich monatelang begleitet.</p>
+      <a href="#" class="cta-button cta-button-light" id="cta-scroll-top">Jetzt PDF erstellen</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-quelle">
+      Erstellt nach Maxim Mankevichs Soul-Codes-System
+      (<a href="https://akademie.maximmankevich.com" target="_blank" rel="noopener">akademie.maximmankevich.com</a>).
+    </p>
+    <p class="footer-disclaimer">
+      Hinweis: Numerologie ist ein spirituell-symbolisches Deutungssystem ohne wissenschaftlichen
+      Wirksamkeitsnachweis. Das PDF ist ein Reflexionsangebot, keine Empfehlung für Lebens-,
+      Karriere-, Gesundheits- oder Finanzentscheidungen.
+    </p>
+    <p class="footer-privacy">
+      Datenschutz: Dein Geburtsdatum und dein Name werden ausschließlich zur PDF-Erstellung in
+      diesem Moment verwendet und nicht gespeichert.
+    </p>
+  </div>
+</footer>
+
+{% if error %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const box = document.getElementById('error-box');
+    box.textContent = {{ error|tojson }};
+    box.hidden = false;
+    box.scrollIntoView({behavior: 'smooth', block: 'center'});
+  });
+</script>
+{% endif %}
+
+<script>
+(function() {
+  const form = document.getElementById('seelenzahlen-form');
+  const submitBtn = document.getElementById('submit-btn');
+  const ctaText = submitBtn.querySelector('.cta-text');
+  const ctaLoading = submitBtn.querySelector('.cta-loading');
+  const errorBox = document.getElementById('error-box');
+
+  document.getElementById('cta-scroll-top').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('input[name="date"]').focus({preventScroll: false});
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+
+  function setLoading(loading) {
+    submitBtn.disabled = loading;
+    ctaText.hidden = loading;
+    ctaLoading.hidden = !loading;
+  }
+
+  function showError(msg) {
+    errorBox.textContent = msg;
+    errorBox.hidden = false;
+    errorBox.scrollIntoView({behavior: 'smooth', block: 'center'});
+  }
+
+  function hideError() {
+    errorBox.hidden = true;
+    errorBox.textContent = '';
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    hideError();
+
+    const formData = new FormData(form);
+    setLoading(true);
+
+    try {
+      const resp = await fetch('/generate', {
+        method: 'POST',
+        body: formData,
+        headers: {'X-Requested-With': 'fetch', 'Accept': 'application/pdf, application/json'},
+      });
+
+      if (!resp.ok) {
+        let msg = 'Etwas ist schiefgegangen. Bitte versuch es erneut.';
+        try {
+          const data = await resp.json();
+          if (data.error) msg = data.error;
+        } catch (_) {}
+        showError(msg);
+        setLoading(false);
+        return;
+      }
+
+      // PDF kommt zurück → als Blob herunterladen
+      const blob = await resp.blob();
+      const cd = resp.headers.get('Content-Disposition') || '';
+      const match = /filename="?([^"]+)"?/.exec(cd);
+      const filename = match ? match[1] : 'Seelenzahlen_Deep-Dive.pdf';
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      setLoading(false);
+    } catch (err) {
+      console.error(err);
+      showError('Netzwerkfehler. Bitte prüfe deine Internetverbindung und versuch es erneut.');
+      setLoading(false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
